@@ -79,6 +79,7 @@ func ConstantTimeBigEndianLessOrEq(x, y []byte) int {
 
 // ConstantTimeByteGreater returns 1 if x > y and 0 otherwise.
 func ConstantTimeByteGreater(x, y uint8) int {
+	// x > y = !(x <= y)
 	return ConstantTimeByteLessOrEq(x, y) ^ 1
 }
 
